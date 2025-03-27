@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Média</title>
+</head>
+<body>
+    <h1>Cálculo de Média das Suas Notas!</h1>
+    <script>
+        var n1, n2, n3, soma, media, men;
+
+        n1 = parseFloat(prompt("Digite a primeira nota:"));
+        n2 = parseFloat(prompt("Digite a segunda nota:"));
+        n3 = parseFloat(prompt("Digite a terceira nota:"));
+
+        if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+            alert("Erro: Certifique-se de digitar apenas números.");
+
+        }else if ((n1 > 10) || (n2 > 10) || (n3 > 10)){
+            alert("Erro: Certifique-se de digitar apenas valores iguais ou menores a 10")
+        } else {
+            soma = n1+n2+n3;
+            media = soma/3;
+
+            if (media >= 9){
+                men = "MB";
+            } else if ((media >=7) && (media<=8.9)) {
+                men = "B";
+            } else if ((media >=5 ) && (media <= 6.9)){
+                men = "R"
+            } else {
+                men = "I";
+            }
+
+            if (media >= 7) {
+                alert("Parabéns! Você foi aprovado!  A média das suas notas foi: "+ media + ", e sua menção foi: " + men);
+            } else if (media >= 5 && media < 7) {
+                alert("Cuidado, você está em recuperação.  A média das suas notas foi: "+ media + ", e sua menção foi: " + men);
+            } else {
+                alert("Atenção, infelizmente você não foi aprovado na matéria.  A média das suas notas foi: "+ media + ", e sua menção foi: " + men);
+            }
+        }
+    </script>
+</body>
+</html>
